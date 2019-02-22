@@ -1,5 +1,5 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { HomePageText } from '../../constants/app-text';
+import { HomePageData } from '../../constants/app-text';
 
 declare var $: any;
 
@@ -10,22 +10,31 @@ declare var $: any;
 })
 export class HomeComponent implements OnInit, AfterViewInit {
 
-  private title = HomePageText.title;
+  private title = HomePageData.title;
+  private segmentos = [];
+  private modalPropiertiesFirstTime = {
+    closable  : false,
+    inverted: true,
+    transition: 'horizontal flip',
+    duration: 500
+  };
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
 
   }
 
   ngAfterViewInit() {
-    $('.ui.modal').modal({
-      closable  : false,
-      inverted: true,
-      transition: 'horizontal flip',
-      duration: 800,
-    })
-    .modal('show');
+    $('.ui.modal.modal1').modal(this.modalPropiertiesFirstTime).modal('show');
   }
 
+  seleccionarSegmentos() {
+    this.segmentos = HomePageData.segmentos;
+    $('.ui.modal.modal2').modal(this.modalPropiertiesFirstTime).modal('show');
+    $('.owl-carousel').owlCarousel({
+      lazyLoad: true
+    });
+  }
 }

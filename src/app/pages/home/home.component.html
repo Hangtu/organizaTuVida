@@ -1,14 +1,50 @@
 <app-header></app-header>
 
 
-<div class="ui modal">
+
+<div class="ui modal modal1" #modal1>
     <h2 class="ui center aligned icon header">
         <i class="circular users icon"></i>
-           {{title}}
+        {{title}}
     </h2>
     <div class="content ui center aligned header">
-        <button class="large ui button red">
+        <button class="large ui button red" (click)="seleccionarSegmentos()">
             Crea tu equilibrio
         </button>
     </div>
 </div>
+
+<div class="ui modal modal2">
+    <h2 class="ui center aligned icon header">Elige tus segmentos</h2>
+    <div class="content">
+        <div class="ui grid">
+            <div class="owl-carousel owl-theme">
+                    <div class="item" *ngFor="let item of segmentos">1</div>
+            </div>
+            <div class="column centered row">
+                <button class="large ui button red center aligned">
+                    Continuar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--<div class="ui modal modal2">
+    <h2 class="ui center aligned icon header">Elige tus segmentos</h2>
+    <div class="content">
+        <div class="ui grid">
+            <div *ngFor="let item of segmentos" class="four wide column center aligned">
+                <h2 class="ui center aligned icon header">
+                    <i class="circular users icon"></i>
+                    {{item.name}}
+                </h2>
+            </div>
+            <div class="column centered row">
+                <button class="large ui button red center aligned">
+                    Continuar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>-->
