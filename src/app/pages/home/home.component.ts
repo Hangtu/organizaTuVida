@@ -11,7 +11,7 @@ declare var $: any;
 export class HomeComponent implements OnInit, AfterViewInit {
 
   private title = HomePageData.title;
-  private segmentos = [];
+  private segmentos = HomePageData.segmentos;
   private modalPropiertiesFirstTime = {
     closable  : false,
     inverted: true,
@@ -31,10 +31,13 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   seleccionarSegmentos() {
-    this.segmentos = HomePageData.segmentos;
+    $('.ui.modal.modal1').remove();
     $('.ui.modal.modal2').modal(this.modalPropiertiesFirstTime).modal('show');
     $('.owl-carousel').owlCarousel({
-      lazyLoad: true
+    loop: false,
+    margin: 10,
+    nav: true,
+    dots: false,
     });
   }
 }

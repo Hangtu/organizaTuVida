@@ -1,7 +1,5 @@
 <app-header></app-header>
 
-
-
 <div class="ui modal modal1" #modal1>
     <h2 class="ui center aligned icon header">
         <i class="circular users icon"></i>
@@ -19,7 +17,16 @@
     <div class="content">
         <div class="ui grid">
             <div class="owl-carousel owl-theme">
-                    <div class="item" *ngFor="let item of segmentos">1</div>
+                <div class="item" *ngFor="let item of segmentos">
+                    <div class="ui card">
+                        <a class="image" href="#">
+                          <img src="https://picsum.photos/200">
+                        </a>
+                        <div class="content">
+                          <a class="header center aligned " href="#">{{item.name}}</a>
+                        </div>
+                      </div>
+                </div>
             </div>
             <div class="column centered row">
                 <button class="large ui button red center aligned">
