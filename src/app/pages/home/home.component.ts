@@ -30,6 +30,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
     $('.ui.modal.modal1').modal(this.modalPropiertiesFirstTime).modal('show');
   }
 
+  addSegment() {
+   console.log('add');
+  }
+
   seleccionarSegmentos() {
     $('.ui.modal.modal1').remove();
     $('.ui.modal.modal2').modal(this.modalPropiertiesFirstTime).modal('show');
