@@ -18,14 +18,10 @@
         <div class="ui grid">
             <div class="owl-carousel owl-theme">
                 <div class="item" *ngFor="let item of segmentos">
-                    <div class="ui card">
-                        <a class="image" href="#">
-                          <img src="https://picsum.photos/200" (click)="addSegment()">
-                        </a>
-                        <div class="content">
-                          <a class="header center aligned " href="#">{{item.name}}</a>
-                        </div>
-                      </div>
+                    <h2 class="ui center aligned icon header">
+                        <i class="circular users icon"></i>
+                        {{item.name}}
+                    </h2>
                 </div>
             </div>
             <div class="column centered row">
