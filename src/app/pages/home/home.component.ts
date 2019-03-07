@@ -27,7 +27,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    $('.ui.modal.modal1').modal(this.modalPropiertiesFirstTime).modal('show');
+    // $('.ui.modal.modal1').modal(this.modalPropiertiesFirstTime).modal('show');
+    $('#modal1').modal('show');
   }
 
   addSegment() {

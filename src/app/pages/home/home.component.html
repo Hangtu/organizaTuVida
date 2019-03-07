@@ -1,5 +1,10 @@
 <app-header></app-header>
 
+<div class="container-fluid">
+    <h1>My First Bootstrap Page</h1>
+    <p>This is some text.</p> 
+  </div>
+
 <div class="ui modal modal1" #modal1>
     <h2 class="ui center aligned icon header">
         <i class="circular users icon"></i>
@@ -33,15 +38,26 @@
     </div>
 </div>
 
-<!--<div class="ui modal modal2">
-    <h2 class="ui center aligned icon header">Elige tus segmentos</h2>
-    <div class="content">
+<!-- Modal -->
+<div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
         <div class="ui grid">
-            <div *ngFor="let item of segmentos" class="four wide column center aligned">
-                <h2 class="ui center aligned icon header">
-                    <i class="circular users icon"></i>
-                    {{item.name}}
-                </h2>
+            <div class="owl-carousel owl-theme">
+                <div class="item" *ngFor="let item of segmentos">
+                    <h2 class="ui center aligned icon header">
+                        <i class="circular users icon"></i>
+                        {{item.name}}
+                    </h2>
+                </div>
             </div>
             <div class="column centered row">
                 <button class="large ui button red center aligned">
@@ -49,5 +65,11 @@
                 </button>
             </div>
         </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
     </div>
-</div>-->
+  </div>
+</div>
