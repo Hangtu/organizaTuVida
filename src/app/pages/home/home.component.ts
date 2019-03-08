@@ -12,6 +12,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   private title = HomePageData.title;
   private segmentos = HomePageData.segmentos;
+  private showSegmentos = false;
   private modalPropiertiesFirstTime = {
     closable  : false,
     inverted: true,
@@ -27,8 +28,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    // $('.ui.modal.modal1').modal(this.modalPropiertiesFirstTime).modal('show');
-    $('#modal1').modal('show');
+    $('#modal1').modal({
+      keyboard: false,
+      backdrop: 'static',
+    });
   }
 
   addSegment() {
@@ -36,13 +39,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   seleccionarSegmentos() {
-    $('.ui.modal.modal1').remove();
-    $('.ui.modal.modal2').modal(this.modalPropiertiesFirstTime).modal('show');
+    this.showSegmentos = true;
     $('.owl-carousel').owlCarousel({
-    loop: false,
-    margin: 10,
-    nav: true,
-    dots: false,
+      loop: false,
+      margin: 10,
+      nav: true,
+      dots: false,
     });
   }
 }
