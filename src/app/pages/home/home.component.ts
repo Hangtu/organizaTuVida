@@ -34,13 +34,15 @@ export class HomeComponent implements OnInit, AfterViewInit {
     });
   }
 
-  addSegment() {
-   console.log('add');
+  addSegment(item) {
+   item.status = !item.status;
+   $('.owl-carousel').trigger('refresh.owl.carousel');
   }
 
   seleccionarSegmentos() {
     this.showSegmentos = true;
     $('.owl-carousel').owlCarousel({
+      items: 4,
       loop: false,
       margin: 10,
       nav: true,

@@ -21,9 +21,20 @@
                 </div>
                 <div>
                     <div class="owl-carousel owl-theme">
-                        <div class="item" *ngFor="let item of segmentos">
-                            <h2>{{item.name}}</h2>
-                        </div>
+                        <ng-container *ngFor="let item of segmentos">
+                            <div class="item">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{item.name}}</h5>
+                                        <p class="card-text">Some quick example text to build on the panel title and
+                                            make up
+                                            the bulk of the panel's content.</p>
+                                        <button type="button" class="btn btn-primary text-center"
+                                            (click)="addSegment(item)">agregar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-container>
                     </div>
                 </div>
             </div>
